@@ -1,67 +1,50 @@
-/* PAGE BACKGROUND */
-body {
+/* --- GLOBAL RESET --- */
+/* Ensure no default browser margins/paddings interfere with full-screen elements */
+html, body {
+  /* Set body margin to 0 here to ensure fixed elements and background work correctly */
   margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* 1. PAGE BACKGROUND & BASE STYLES */
+/* ---------------------------------------------------- */
+body {
   font-family: Arial, sans-serif;
   color: white;
 
+  /* Smooth gradient transition from a large black area to dark purple */
   background: linear-gradient(
     to bottom, 
-    #000000 0,       
-    #000000 300px,   
-    #1e0040 450px,   
-    #39016b 650px,   
-    #53029a 100%     
+    #000000 0,       /* Start with solid black */
+    #000000 300px,   /* Black remains solid down to 300px */
+    #1e0040 450px,   /* Smooth transition to first dark purple color */
+    #39016b 650px,   /* Transition further */
+    #53029a 100%     /* Final, deepest purple color */
   );
   
   min-height: 200vh;
   background-attachment: fixed;
 }
 
-/* LOGO CONTAINER AND FADE */
-.logo-container {
-  text-align: center;
-  /* Set the container background to match the logo's background color (#000000) */
-  background-color: #000000; 
-  
-  /* Vertical gradient to smoothly transition from the logo's black to the page's purple */
-  background-image: linear-gradient(
-    to bottom, 
-    #000000 70%,    /* Black covers the top 70% of the container */
-    #1e0040 100%    /* Fade out to the page's starting dark purple color */
-  );
-  
-  /* Control the vertical height of the fade area */
-  padding-top: 40px; 
-  padding-bottom: 60px; /* Increased padding to lengthen the fade area */
-}
 
-.logo-container img {
-  width: 350px; 
-  height: auto;
-}
-
-/* NAVIGATION (STICKY AT TOP) */
+/* ---------------------------------------------------- */
+/* 2. FIXED NAVIGATION BAR */
+/* ---------------------------------------------------- */
 nav {
-  /* 1. KEY PROPERTY: Fixes the element relative to the viewport */
-  position: fixed;
-  
-  /* 2. KEY PROPERTIES: Ensures it sticks to the very top and left corner */
+  /* Fixes the element relative to the viewport so it stays visible on scroll */
+  position: fixed; 
   top: 0;
   left: 0;
-  
-  /* 3. Ensures it spans the full width of the screen */
   width: 100%; 
-  
-  /* 4. Optional: Add a solid black background so the content underneath doesn't show through */
   background-color: #000000;
-  
-  /* 5. Optional: Ensures the navigation is always on top of other elements */
-  z-index: 1000; 
+  z-index: 1000; /* Ensures the navigation is always on top */
 
-  /* 6. Existing layout styles (adjusted padding) */
+  /* Layout: Spreads links across the full width */
   display: flex;
   justify-content: space-around; 
-  padding: 15px 10px; /* Use padding for spacing, remove margin-top */
+  padding: 15px 10px; 
   font-size: 22px;
   font-weight: bold;
 }
@@ -76,33 +59,83 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* MAIN CENTER TEXT */
+
+/* ---------------------------------------------------- */
+/* 3. LOGO CONTAINER & FADE EFFECT */
+/* ---------------------------------------------------- */
+.logo-container {
+  /* Ensures content starts below the fixed navigation bar */
+  padding-top: calc(40px + 52px); /* 40px base + ~52px height of the nav bar */
+  
+  text-align: center;
+  background-color: #000000; 
+  
+  /* Gradient to smoothly blend the logo's black background into the page's purple */
+  background-image: linear-gradient(
+    to bottom, 
+    #000000 70%,    /* Keeps the top 70% solid black */
+    #1e0040 100%    /* Fades to the starting page purple */
+  );
+  
+  /* Vertical height of the fade area */
+  padding-bottom: 60px;
+}
+
+.logo-container img {
+  width: 350px; 
+  height: auto;
+}
+
+
+/* ---------------------------------------------------- */
+/* 4. MAIN CENTER TEXT */
+/* ---------------------------------------------------- */
 .center-text {
   text-align: center;
   margin-top: 120px;
   line-height: 1.8;
   font-size: 28px;
 }
+
 .center-text h1 {
+  /* Reduces the space between "WELCOME" and "ANGELS" */
   line-height: 1; 
-  /*remove any default top/bottom margins on the <h1> */
-  margin: 0; 
+  margin: 0; /* Removes default margin */
 }
 
-/* FULL WIDTH IMAGE (for the band photo) */
+.center-text p {
+  /* Reduces the space above and between the smaller lines of text */
+  margin-top: 5px; 
+  margin-bottom: 5px; 
+}
+
+
+/* ---------------------------------------------------- */
+/* 5. HORIZONTAL DIVIDER LINE */
+/* ---------------------------------------------------- */
+.divider-line {
+  height: 2px;
+  background-color: white; 
+  width: 90%; /* Line takes up 90% of the width */
+  margin: 40px auto; /* Centers the line and adds vertical space */
+  border-radius: 1px;
+}
+
+
+/* ---------------------------------------------------- */
+/* 6. FULL WIDTH IMAGE (for the band photo) */
+/* ---------------------------------------------------- */
 .full-width-image {
   width: 100%;
   height: auto; 
   display: block;
 }
 
-.divider-line {
-  /* Set the height (thickness) and color of the line */
-  height: 2px;
-  background-color: white; 
-  width: 90%; /* Adjust this percentage to make the line longer or shorter */
-  /* KEY: This centers the line horizontally */
-  margin: 40px auto;  
-  /* OPTIONAL: Adds a slight border radius to make the ends look soft */
-  border-radius: 1px;
+.left-aligned-photo {
+  display: block; 
+  
+  width: 800px; 
+  height: auto;
+  margin-left: 20px; 
+  margin-right: auto;
 }
