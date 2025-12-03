@@ -1,0 +1,49 @@
+/* PAGE BACKGROUND */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+
+  /* Purple → black gradient background */
+  background: linear-gradient(to bottom, #000000, #1b0030, #3c007a, #5c00c8);
+  min-height: 200vh; /* allows scrolling */
+  background-attachment: fixed; /* smooth scrolling effect */
+}
+
+/* LOGO */
+.logo-container {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.logo-container img {
+  width: 350px; /* adjust your logo size */
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN CENTER TEXT */
+.center-text {
+  text-align: center;
+  margin-top: 120px;
+  line-height: 1.8;
+  font-size: 28px;
+}
