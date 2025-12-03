@@ -4,56 +4,50 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  /* Purple → black gradient background */
-  /* IMPORTANT: Change the TOP part of the gradient to MATCH the logo's black background */
-  background: linear-gradient(to bottom, #000000 0%, #000000 100px, #39016b 40%,#53029a);
+  background: linear-gradient(
+    to bottom, 
+    #000000 0,       
+    #000000 300px,   
+    #1e0040 450px,   
+    #39016b 650px,   
+    #53029a 100%     
+  );
+  
   min-height: 200vh;
   background-attachment: fixed;
 }
 
-/* LOGO */
+/* LOGO CONTAINER AND FADE */
 .logo-container {
   text-align: center;
   /* Set the container background to match the logo's background color (#000000) */
   background-color: #000000; 
   
-  /* Apply a vertical gradient that transitions from black to your page's purple */
+  /* Vertical gradient to smoothly transition from the logo's black to the page's purple */
   background-image: linear-gradient(
     to bottom, 
-    #000000 70%, /* Black covers the top 70% of the container */
-    #230045 100% /* Your page's starting purple color for a clean transition */
+    #000000 70%,    /* Black covers the top 70% of the container */
+    #1e0040 100%    /* Fade out to the page's starting dark purple color */
   );
   
   /* Control the vertical height of the fade area */
   padding-top: 40px; 
-  padding-bottom: 20px; /* Added some padding to stretch the fade area */
+  padding-bottom: 60px; /* Increased padding to lengthen the fade area */
 }
 
 .logo-container img {
-  width: 350px; /* Use the larger, preferred size */
+  width: 350px; 
   height: auto;
 }
 
-/* NAVIGATION */
+/* NAVIGATION (Combined and Fixed) */
 nav {
   display: flex;
-  justify-content: center; /* This is centering them, which we want to change */
-  gap: 60px;             /* This is setting a fixed gap */
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-nav {
-  display: flex;
-  /* KEY CHANGE: This spreads out the links evenly across the entire width */
+  /* STRETCH: Spreads the links evenly across the whole width */
   justify-content: space-around; 
   
-  /* Remove the fixed gap since space-around handles the spacing */
-  /* gap: 60px; */ 
-  
   margin-top: 20px;
-  padding: 0 10px; /* Add slight padding on the sides so the first/last links don't touch the edge */
+  padding: 0 10px; /* Slight padding on the sides */
   font-size: 22px;
   font-weight: bold;
 }
@@ -76,7 +70,7 @@ nav a:hover {
   font-size: 28px;
 }
 
-/* FULL WIDTH IMAGE (Keep this for the band photo, if used) */
+/* FULL WIDTH IMAGE (for the band photo) */
 .full-width-image {
   width: 100%;
   height: auto; 
