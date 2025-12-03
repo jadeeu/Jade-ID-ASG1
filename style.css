@@ -37,9 +37,23 @@ body {
 /* NAVIGATION */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 60px;
+  justify-content: center; /* This is centering them, which we want to change */
+  gap: 60px;             /* This is setting a fixed gap */
   margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  /* KEY CHANGE: This spreads out the links evenly across the entire width */
+  justify-content: space-around; 
+  
+  /* Remove the fixed gap since space-around handles the spacing */
+  /* gap: 60px; */ 
+  
+  margin-top: 20px;
+  padding: 0 10px; /* Add slight padding on the sides so the first/last links don't touch the edge */
   font-size: 22px;
   font-weight: bold;
 }
