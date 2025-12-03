@@ -47,3 +47,25 @@ nav a:hover {
   line-height: 1.8;
   font-size: 28px;
 }
+.full-width-image {
+  /* This is the key: makes the image take up 100% of the screen width */
+  width: 100%;
+  
+  /* Ensures the image height adjusts automatically to prevent distortion */
+  height: auto; 
+  
+  /* Removes any tiny space below the image that sometimes appears */
+  display: block;
+}
+
+/* --- 4. LOGO AND NAVIGATION STYLES --- */
+.logo-container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.logo-container img {
+  /* The logo image itself */
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+}
