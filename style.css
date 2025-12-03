@@ -40,14 +40,28 @@ body {
   height: auto;
 }
 
-/* NAVIGATION (Combined and Fixed) */
+/* NAVIGATION (STICKY AT TOP) */
 nav {
-  display: flex;
-  /* STRETCH: Spreads the links evenly across the whole width */
-  justify-content: space-around; 
+  /* 1. KEY PROPERTY: Fixes the element relative to the viewport */
+  position: fixed;
   
-  margin-top: 20px;
-  padding: 0 10px; /* Slight padding on the sides */
+  /* 2. KEY PROPERTIES: Ensures it sticks to the very top and left corner */
+  top: 0;
+  left: 0;
+  
+  /* 3. Ensures it spans the full width of the screen */
+  width: 100%; 
+  
+  /* 4. Optional: Add a solid black background so the content underneath doesn't show through */
+  background-color: #000000;
+  
+  /* 5. Optional: Ensures the navigation is always on top of other elements */
+  z-index: 1000; 
+
+  /* 6. Existing layout styles (adjusted padding) */
+  display: flex;
+  justify-content: space-around; 
+  padding: 15px 10px; /* Use padding for spacing, remove margin-top */
   font-size: 22px;
   font-weight: bold;
 }
