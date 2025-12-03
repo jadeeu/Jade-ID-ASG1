@@ -5,19 +5,33 @@ body {
   color: white;
 
   /* Purple → black gradient background */
-  background: linear-gradient(to bottom, #000000, #1b0030, #3c007a, #5c00c8);
-  min-height: 200vh; /* allows scrolling */
-  background-attachment: fixed; /* smooth scrolling effect */
+  /* IMPORTANT: Change the TOP part of the gradient to MATCH the logo's black background */
+  background: linear-gradient(to bottom, #000000 0%, #000000 100px, #39016b 40%,#53029a);
+  min-height: 200vh;
+  background-attachment: fixed;
 }
 
 /* LOGO */
 .logo-container {
   text-align: center;
-  padding-top: 40px;
+  /* Set the container background to match the logo's background color (#000000) */
+  background-color: #000000; 
+  
+  /* Apply a vertical gradient that transitions from black to your page's purple */
+  background-image: linear-gradient(
+    to bottom, 
+    #000000 70%, /* Black covers the top 70% of the container */
+    #230045 100% /* Your page's starting purple color for a clean transition */
+  );
+  
+  /* Control the vertical height of the fade area */
+  padding-top: 40px; 
+  padding-bottom: 20px; /* Added some padding to stretch the fade area */
 }
 
 .logo-container img {
-  width: 350px; /* adjust your logo size */
+  width: 350px; /* Use the larger, preferred size */
+  height: auto;
 }
 
 /* NAVIGATION */
@@ -47,25 +61,10 @@ nav a:hover {
   line-height: 1.8;
   font-size: 28px;
 }
+
+/* FULL WIDTH IMAGE (Keep this for the band photo, if used) */
 .full-width-image {
-  /* This is the key: makes the image take up 100% of the screen width */
   width: 100%;
-  
-  /* Ensures the image height adjusts automatically to prevent distortion */
   height: auto; 
-  
-  /* Removes any tiny space below the image that sometimes appears */
   display: block;
-}
-
-/* --- 4. LOGO AND NAVIGATION STYLES --- */
-.logo-container {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.logo-container img {
-  /* The logo image itself */
-  width: 150px; /* Adjust size as needed */
-  height: auto;
 }
