@@ -82,3 +82,13 @@ nav a:hover {
   display: block;
 }
 
+.divider-line {
+  /* Set the height (thickness) and color of the line */
+  height: 2px;
+  background-color: white; 
+  width: 90%; /* Adjust this percentage to make the line longer or shorter */
+  /* KEY: This centers the line horizontally */
+  margin: 40px auto;  
+  /* OPTIONAL: Adds a slight border radius to make the ends look soft */
+  border-radius: 1px;
+}
