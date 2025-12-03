@@ -69,6 +69,11 @@ nav a:hover {
   line-height: 1.8;
   font-size: 28px;
 }
+.center-text h1 {
+  line-height: 1; 
+  /*remove any default top/bottom margins on the <h1> */
+  margin: 0; 
+}
 
 /* FULL WIDTH IMAGE (for the band photo) */
 .full-width-image {
@@ -76,3 +81,4 @@ nav a:hover {
   height: auto; 
   display: block;
 }
+
