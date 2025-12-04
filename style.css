@@ -1,31 +1,31 @@
 /* --- GLOBAL RESET --- */
 /* Ensure no default browser margins/paddings interfere with full-screen elements */
 html, body {
-  /* Set body margin to 0 here to ensure fixed elements and background work correctly */
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    /* Set body margin to 0 here to ensure fixed elements and background work correctly */
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /* ---------------------------------------------------- */
 /* 1. PAGE BACKGROUND & BASE STYLES */
 /* ---------------------------------------------------- */
 body {
-  font-family: Arial, sans-serif;
-  color: white;
+    font-family: Arial, sans-serif;
+    color: white;
 
-  /* Smooth gradient transition from a large black area to dark purple */
-  background: linear-gradient(
-    to bottom, 
-    #000000 0,       /* Start with solid black */
-    #000000 300px,   /* Black remains solid down to 300px */
-    #1e0040 450px,   /* Smooth transition to first dark purple color */
-    #39016b 650px,   /* Transition further */
-    #53029a 100%     /* Final, deepest purple color */
-  );
-  
-  min-height: 200vh;
-  background-attachment: fixed;
+    /* Smooth gradient transition from a large black area to dark purple */
+    background: linear-gradient(
+        to bottom, 
+        #000000 0,      /* Start with solid black */
+        #000000 300px,  /* Black remains solid down to 300px */
+        #1e0040 450px,  /* Smooth transition to first dark purple color */
+        #39016b 650px,  /* Transition further */
+        #53029a 100%    /* Final, deepest purple color */
+    );
+    
+    min-height: 200vh;
+    background-attachment: fixed;
 }
 
 
@@ -33,30 +33,51 @@ body {
 /* 2. FIXED NAVIGATION BAR */
 /* ---------------------------------------------------- */
 nav {
-  /* Fixes the element relative to the viewport so it stays visible on scroll */
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%; 
-  background-color: #000000;
-  z-index: 1000; /* Ensures the navigation is always on top */
+    /* Fixes the element relative to the viewport so it stays visible on scroll */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #000000;
+    z-index: 1000; /* Ensures the navigation is always on top */
 
-  /* Layout: Spreads links across the full width */
-  display: flex;
-  justify-content: space-around; 
-  padding: 15px 10px; 
-  font-size: 22px;
-  font-weight: bold;
+    display: flex;
+    /* Use space-between when icons are present on a page (index, shop) 
+       or space-around when only links are present (ca4, tour) */
+    justify-content: space-around; 
+    align-items: center; /* Vertically center content */
+    padding: 15px 10px; 
+    font-size: 22px;
+    font-weight: bold;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+/* NAVIGATION ICONS (for index.html and shop.html) */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the two icons/links */
+    padding-right: 20px; 
+}
+
+.nav-image {
+    width: 28px; 
+    height: auto;
+    vertical-align: middle; 
+}
+.nav-icon-static {
+    display: flex; 
+    align-items: center;
+    cursor: default; 
 }
 
 
@@ -64,40 +85,40 @@ nav a:hover {
 /* 3. LOGO CONTAINER & FADE EFFECT */
 /* ---------------------------------------------------- */
 .logo-container {
-  /* Ensures content starts below the fixed navigation bar */
-  padding-top: calc(40px + 52px); /* 40px base + ~52px height of the nav bar */
-  
-  text-align: center;
-  background-color: #000000; 
+    /* Ensures content starts below the fixed navigation bar */
+    padding-top: calc(40px + 52px); /* 40px base + ~52px height of the nav bar */
+    
+    text-align: center;
+    background-color: #000000; 
 }
 .logo-container img {
-  width: 350px; 
-  height: auto;
-  display: block;
-  margin: 0 auto;
+    width: 350px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 
 /* ---------------------------------------------------- */
-/* 4. MAIN CENTER TEXT */
+/* 4. MAIN CENTER TEXT (Used for the WELCOME ANGELS section) */
 /* ---------------------------------------------------- */
 .center-text {
-  text-align: center;
-  margin-top: 120px;
-  line-height: 1.8;
-  font-size: 28px;
+    text-align: center;
+    margin-top: 120px;
+    line-height: 1.8;
+    font-size: 28px;
 }
 
 .center-text h1 {
-  /* Reduces the space between "WELCOME" and "ANGELS" */
-  line-height: 1; 
-  margin: 0; /* Removes default margin */
+    /* Reduces the space between "WELCOME" and "ANGELS" */
+    line-height: 1; 
+    margin: 0; /* Removes default margin */
 }
 
 .center-text p {
-  /* Reduces the space above and between the smaller lines of text */
-  margin-top: 5px; 
-  margin-bottom: 5px; 
+    /* Reduces the space above and between the smaller lines of text */
+    margin-top: 5px; 
+    margin-bottom: 5px; 
 }
 
 
@@ -105,50 +126,50 @@ nav a:hover {
 /* 5. HORIZONTAL DIVIDER LINE */
 /* ---------------------------------------------------- */
 .divider-line {
-  height: 2px;
-  background-color: white; 
-  width: 90%; /* Line takes up 90% of the width */
-  margin: 40px auto; /* Centers the line and adds vertical space */
-  border-radius: 1px;
+    height: 2px;
+    background-color: white; 
+    width: 90%; /* Line takes up 90% of the width */
+    margin: 40px auto; /* Centers the line and adds vertical space */
+    border-radius: 1px;
 }
 
 
-
 /* ---------------------------------------------------- */
-/* 6. FULL WIDTH IMAGE (for the band photo) */
+/* 6. FULL WIDTH IMAGE (for the band photo on index.html) */
 /* ---------------------------------------------------- */
-/* THE IMAGE ITSELF */
 .centered-photo {
-  display: block; 
-  width: 900px; 
-  height: auto;
-  margin: 0 auto 0 460px; 
-}
-
-.nav-image {
-    width: 28px; /* Adjust the size as needed (e.g., 32px) */
+    display: block; 
+    width: 900px; 
     height: auto;
-    /* Ensures the image aligns nicely with the text/cart count */
-    vertical-align: middle; 
-}
-.nav-icon-static {
-    /* Ensures the icon sits nicely with the cart icon */
-    display: flex; 
-    align-items: center;
-    /* You can add a tooltip here later if desired */
-    cursor: default; 
+    /* This centers the image then pushes it 460px to the right */
+    margin: 0 auto 0 460px; 
 }
 
+
 /* ---------------------------------------------------- */
-/* THREE-COLUMN PHOTO LAYOUT */
+/* 7. CA4 PAGE & THREE-COLUMN LAYOUT */
 /* ---------------------------------------------------- */
+
+.ca4-content-wrapper {
+    /* Pushes content down past the fixed navigation bar */
+    padding-top: 100px; 
+    padding-bottom: 50px;
+    
+    text-align: center;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.ca4-content-wrapper h1 {
+    font-size: 40px; 
+    margin-bottom: 30px;
+}
+
+/* THREE-COLUMN PHOTO LAYOUT (Flexbox) */
 .three-photo-row {
     display: flex;
     justify-content: space-around; 
-    
-    /* CRITICAL: Ensure all items stretch to the full height of the tallest item */
-    align-items: stretch; 
-    
+    align-items: flex-start; 
     margin: 60px auto; 
     max-width: 1200px; 
 }
@@ -158,19 +179,33 @@ nav a:hover {
     width: 30%; 
     text-align: center; 
     
-    /* NEW: Turn the item into a flex container */
+    /* Enables stacking of image/name/bio */
     display: flex; 
-    flex-direction: column; /* Stacks image and text vertically */
-    
-    /* Ensure the photo-item itself takes up the full available height */
+    flex-direction: column; 
     height: 100%; 
 }
 
-/* Style for the images */
+/* Style for the images (FIXED HEIGHT TO MATCH) */
 .photo-item img {
     width: 100%; 
-    height: 500px; /* <--- Set a FIXED HEIGHT for all images */
+    height: 500px; /* <--- FIXED HEIGHT for all three photos */
     object-fit: cover; 
     border-radius: 4px; 
     margin-bottom: 10px;
+}
+
+/* MEMBER NAME/BIO TEXT STYLES */
+.member-name {
+    font-size: 32px; 
+    font-weight: bold;
+    margin-top: 20px; 
+    margin-bottom: 5px; 
+    line-height: 1.2;
+}
+
+.member-bio {
+    font-size: 18px;
+    color: #cccccc; 
+    line-height: 1.5;
+    margin-top: 0; 
 }
