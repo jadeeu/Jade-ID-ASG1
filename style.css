@@ -138,3 +138,39 @@ nav a:hover {
     /* You can add a tooltip here later if desired */
     cursor: default; 
 }
+
+/* ---------------------------------------------------- */
+/* THREE-COLUMN PHOTO LAYOUT */
+/* ---------------------------------------------------- */
+.three-photo-row {
+    display: flex;
+    justify-content: space-around; 
+    
+    /* CRITICAL: Ensure all items stretch to the full height of the tallest item */
+    align-items: stretch; 
+    
+    margin: 60px auto; 
+    max-width: 1200px; 
+}
+
+/* Style for each individual picture/text container */
+.photo-item {
+    width: 30%; 
+    text-align: center; 
+    
+    /* NEW: Turn the item into a flex container */
+    display: flex; 
+    flex-direction: column; /* Stacks image and text vertically */
+    
+    /* Ensure the photo-item itself takes up the full available height */
+    height: 100%; 
+}
+
+/* Style for the images */
+.photo-item img {
+    width: 100%; 
+    height: 500px; /* <--- Set a FIXED HEIGHT for all images */
+    object-fit: cover; 
+    border-radius: 4px; 
+    margin-bottom: 10px;
+}
