@@ -158,7 +158,8 @@ nav a:hover {
 .three-photo-row {
     display: flex;
     justify-content: space-around; 
-    align-items: flex-start; 
+    /* align-items: stretch is inherited, forcing columns to max height */
+    align-items: stretch; 
     margin: 60px auto; 
     max-width: 1200px; 
 }
@@ -168,27 +169,22 @@ nav a:hover {
     width: 30%; 
     text-align: center; 
     
-    /* CRITICAL: Parent Flex container for image and text-content */
     display: flex; 
     flex-direction: column; 
     height: 100%; 
     
-    /* REMOVE BACKGROUND COLOR from .photo-item and set to transparent
-       as the color is moved to the .text-content wrapper */
+    /* Removed background color for the floating text look */
     background-color: transparent; 
-    padding-bottom: 0; 
+    padding-bottom: 20px; /* Space below the bio text */
 }
 
-/* NEW: Wrapper for Name and Bio */
+/* Wrapper for Name and Bio (Flex Growth Fix) */
 .text-content {
-    /* CRITICAL FIX: Force this element to stretch to the height of the tallest bio */
+    /* Ensures equal column height even with different bio lengths */
     flex-grow: 1; 
     
-    /* Apply background color here to ensure the colored block stretches */
-    background-color: #39016b; 
-    padding-bottom: 20px; /* Space below the bio text */
+    /* REMOVED background-color here to remove the purple boxes */
     
-    /* Make the content inside the block stack and align */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -204,7 +200,6 @@ nav a:hover {
 }
 
 /* MEMBER NAME/BIO TEXT STYLES */
-/* These styles are now applied to content *inside* .text-content */
 .member-name {
     font-size: 24px; 
     font-weight: bold;
@@ -221,4 +216,51 @@ nav a:hover {
     line-height: 1.4;
     margin: 0; 
     padding: 0 10px; 
+}
+
+/* ---------------------------------------------------- */
+/* 8. IMAGE LEFT, TEXT RIGHT LAYOUT (NEW SECTION) */
+/* ---------------------------------------------------- */
+
+.info-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    max-width: 1200px;
+    margin: 80px auto; 
+    text-align: left; /* Ensures all content inside is left-aligned by default */
+}
+
+/* Left Column: Image */
+.image-column {
+    width: 40%;
+    padding-right: 40px; 
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Right Column: Text */
+.text-column {
+    width: 60%;
+    /* text-align: left is inherited from .info-row */
+}
+
+.row-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.row-paragraph {
+    font-size: 18px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
