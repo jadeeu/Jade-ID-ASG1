@@ -122,8 +122,19 @@ nav a:hover {
   display: block; 
   width: 900px; 
   height: auto;
-  
-  /* KEY CHANGE: Off-center the image */
-  /* Top | Right (Auto keeps it centered on the right side) | Bottom | Left (Pushes it 150px right) */
   margin: 0 auto 0 460px; 
+}
+
+.nav-image {
+    width: 28px; /* Adjust the size as needed (e.g., 32px) */
+    height: auto;
+    /* Ensures the image aligns nicely with the text/cart count */
+    vertical-align: middle; 
+}
+.nav-icon-static {
+    /* Ensures the icon sits nicely with the cart icon */
+    display: flex; 
+    align-items: center;
+    /* You can add a tooltip here later if desired */
+    cursor: default; 
 }
