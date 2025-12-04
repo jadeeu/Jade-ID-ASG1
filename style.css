@@ -125,17 +125,21 @@ nav a:hover {
 /* ---------------------------------------------------- */
 /* 6. FULL WIDTH IMAGE (for the band photo) */
 /* ---------------------------------------------------- */
-.full-width-image {
-  width: 100%;
-  height: auto; 
-  display: block;
+
+.centered-image-container {
+  text-align: center; /* Ensures content inside is centered horizontally */
+  margin-top: 50px; /* Adjust spacing above the photo as needed */
+  margin-bottom: 50px; /* Adjust spacing below the photo as needed */
 }
 
-.left-aligned-photo {
-  display: block; 
+/* THE IMAGE ITSELF */
+.centered-photo {
+  display: block; /* Important: Allows margin: auto to work */
   
-  width: 800px; 
+  /* Set a size for the photo */
+  width: 900px; 
   height: auto;
-  margin-left: 20px; 
-  margin-right: auto;
+  
+  /* KEY: This centers the image horizontally */
+  margin: 0 auto; 
 }
