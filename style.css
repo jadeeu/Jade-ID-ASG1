@@ -69,22 +69,11 @@ nav a:hover {
   
   text-align: center;
   background-color: #000000; 
-  
-  /* Gradient to smoothly blend the logo's black background into the page's purple */
-  background-image: linear-gradient(
-    to bottom, 
-    #000000 70%,    /* Keeps the top 70% solid black */
-    #1e0040 100%    /* Fades to the starting page purple */
-  );
-  
-  /* Vertical height of the fade area */
-  padding-bottom: 60px;
 }
-
 .logo-container img {
   width: 350px; 
   height: auto;
-  display: block; 
+  display: block;
   margin: 0 auto;
 }
 
