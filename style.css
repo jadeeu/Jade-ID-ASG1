@@ -172,16 +172,16 @@ nav a:hover {
     flex-direction: column; 
     height: 100%; 
     
-    /* Ensure no background color here */
+    /* No background color here */
     background-color: transparent; 
-    padding-bottom: 20px; /* Space below the bio text */
+    padding-bottom: 20px; 
 }
 
 /* Wrapper for Name and Bio (Flex Growth Fix) */
 .text-content {
-    /* Ensures equal column height even with different bio lengths */
+    /* Ensures equal column height */
     flex-grow: 1; 
-    /* Ensure NO background color here for floating text */
+    /* No background color here for floating text */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -216,7 +216,7 @@ nav a:hover {
 }
 
 /* ---------------------------------------------------- */
-/* 8. IMAGE LEFT, TEXT RIGHT LAYOUT (NO PURPLE BOX) */
+/* 8. IMAGE LEFT, TEXT RIGHT LAYOUT (STACKED CONTENT, NO BOX) */
 /* ---------------------------------------------------- */
 
 .info-row {
@@ -230,27 +230,35 @@ nav a:hover {
 /* Left Column: Image */
 .image-column {
     width: 40%;
+    /* Space between the images and the text column */
     padding-right: 40px; 
 }
 
+/* Image stacking */
 .image-column img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
+    /* Margin to separate the two stacked images */
+    margin-bottom: 40px; 
 }
 
 /* Right Column: Text */
 .text-column {
     width: 60%; 
     
+    /* Flexbox for vertical stacking of text blocks */
     display: flex; 
     flex-direction: column;
+    
+    /* Gap between the "HOW IT BEGUN" block and "FUN FACTS" block */
     gap: 40px; 
 }
 
 .text-block {
-    padding-bottom: 20px; 
+    /* These blocks stack, taking up full width of the column */
+    padding-bottom: 0; 
 }
 
 .row-heading {
@@ -262,7 +270,7 @@ nav a:hover {
     text-transform: uppercase;
     line-height: 1.1;
     
-    /* MODIFIED: Centered the text */
+    /* Centered the text */
     text-align: center; 
 }
 
