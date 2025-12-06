@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Atlantic — Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <a href="index.html">HOME</a>
+                <a href="shop.html">SHOP</a>
+                <a href="#" onclick="showSoldOutAlert(); return false;">TOUR</a>
+                <a href="ca4.html">CA4</a>
+        </div>
+
+    <div class="nav-right">
+        <span class="nav-icon"><i class="fas fa-user"></i></span>
+        
+        <a href="cart.html" class="nav-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i> 
+            <span id="cart-quantity">0</span> 
+        </a>
+    </div>
+</div>
+    </nav>
+
+    <!-- Shop Content -->
+    <div class="shop-content-wrapper">
+        <h1>Official Chase Atlantic Merch</h1>
+        <p>Exclusive Apparel and Collectibles.</p>
+
+        <div class="divider-line"></div>
+
+        <div class="product-grid">
+
+            <div class="product-item">
+                <img src="product1.jpg" alt="Cold Nights Hoodie">
+                <h3>Cold Nights Hoodie</h3>
+                <p class="price">$75.00</p>
+                <button class="add-to-cart-btn" onclick="addToCart();">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-item">
+                <img src="product2.jpg" alt="Oversized T-shirt">
+                <h3>Oversized Logo Tee</h3>
+                <p class="price">$35.00</p>
+                <button class="add-to-cart-btn" onclick="addToCart();">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-item">
+                <img src="product3.jpg" alt="Fallen Angel Vinyl">
+                <h3>Fallen Angel Vinyl</h3>
+                <p class="price">$25.00</p>
+                <button class="add-to-cart-btn" onclick="addToCart();">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

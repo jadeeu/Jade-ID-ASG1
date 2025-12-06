@@ -5,59 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chase Atlantic — CA4</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-    
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="shop.html">SHOP</a>
-        <a href="#" onclick="showSoldOutAlert(); return false;">TOUR</a>
-        <a href="ca4.html">CA4</a>
-    </nav>
-    
+ <div class="nav-wrapper">
+    <div class="nav-left">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="#" onclick="showSoldOutAlert(); return false;">TOUR</a>
+        <a href="ca4.html">CA4</a>
+    </div>
+
+    <div class="nav-right">
+        <span class="nav-icon"><i class="fas fa-user"></i></span>
+        
+        <a href="cart.html" class="nav-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i> 
+            <span id="cart-quantity">0</span> 
+        </a>
+    </div>
+ </div>
     <div class="ca4-content-wrapper">
-        
-        <h1>CHASE ATLANTIC</h1> 
+
+        <h1>CHASE ATLANTIC</h1>
         <p>Meet the band members!</p>
+
         <div class="divider-line"></div>
-        
+
         <div class="three-photo-row">
-            
+
             <div class="photo-item">
-                <img src="mitty.png" alt="Mitchel Cave Portrait"> 
-                <div class="text-content"> <h2 class="member-name">Mitchel Cave</h2> 
-                    <p class="member-bio">Born on the 2nd of December 1996. He formed this band with his older brother Clinton.</p>
+                <img src="mitty.png" alt="Mitchel Cave Portrait">
+                <div class="text-content">
+                    <h2 class="member-name">Mitchel Cave</h2>
+                    <p class="member-bio">
+                        Born on the 2nd of December 1996. He formed this band with his older brother Clinton.
+                    </p>
                 </div>
             </div>
 
             <div class="photo-item">
-                <img src="christian.png" alt="Christian Anthony Portrait"> 
-                <div class="text-content"> <h2 class="member-name">Christian Anthony</h2> 
-                    <p class="member-bio">Born on the 3rd of September 1997. Chris is the lead guitarist and vocalist responsible for programming.</p>
+                <img src="christian.png" alt="Christian Anthony Portrait">
+                <div class="text-content">
+                    <h2 class="member-name">Christian Anthony</h2>
+                    <p class="member-bio">
+                        Born on the 3rd of September 1997. Chris is the lead guitarist and vocalist responsible for programming.
+                    </p>
                 </div>
             </div>
 
             <div class="photo-item">
-                <img src="clinton.png" alt="Clinton Cave Portrait"> 
-                <div class="text-content"> <h2 class="member-name">Clinton Cave</h2> 
-                    <p class="member-bio">Born on the 4th July 1993. His journey began by starting a simple YouTube channel. Over the years, him, his brother and Anthony has gained over 1.6 million subscribers.</p>
+                <img src="clinton.png" alt="Clinton Cave Portrait">
+                <div class="text-content">
+                    <h2 class="member-name">Clinton Cave</h2>
+                    <p class="member-bio">
+                        Born on the 4th July 1993. His journey began by starting a simple YouTube channel. Over the years, him, his brother and Anthony has gained over 1.6 million subscribers.
+                    </p>
                 </div>
             </div>
-            
+
         </div>
-        
-        <div class="divider-line"></div> 
+
+        <div class="divider-line"></div>
 
         <div class="info-row">
-            
+
             <div class="image-column">
                 <img src="trio.png" alt="CA4 Album Art">
                 <img src="trio2.jpg" alt="Chase Atlantic second band photo">
             </div>
 
             <div class="text-column">
-                
+
                 <div class="text-block">
                     <h2 class="row-heading">HOW IT BEGUN</h2>
                     <p class="row-paragraph">
@@ -77,6 +99,9 @@
 
             </div>
         </div>
-    </div> <script src="script.js"></script> 
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

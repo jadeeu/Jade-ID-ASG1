@@ -22,3 +22,24 @@ function showSoldOutAlert() {
     // This command pops up a modal window with the specified text.
     alert("All tickets sold out.");
 }
+
+// --- Cart Functionality ---
+function addToCart() {
+    // Get the current quantity from the span
+    let cartQuantityElement = document.getElementById('cart-quantity');
+    let currentQuantity = parseInt(cartQuantityElement.textContent);
+    
+    // Increase the quantity and update the display
+    let newQuantity = currentQuantity + 1;
+    cartQuantityElement.textContent = newQuantity;
+
+    // Optional: Provide visual feedback to the user
+    alert("Item added to cart! Total items: " + newQuantity);
+}
+
+// --- TOUR Alert Functionality ---
+function showSoldOutAlert() {
+    alert("All tickets sold out");
+}
+
+// You can add other functions here later, like initializing the cart on load.

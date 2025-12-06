@@ -1,101 +1,134 @@
-/* --- GLOBAL RESET --- */
-/* Ensure no default browser margins/paddings interfere with full-screen elements */
+/* ----------------------------------------------------
+   GLOBAL RESET
+---------------------------------------------------- */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-}
-
-/* ---------------------------------------------------- */
-/* 1. PAGE BACKGROUND & BASE STYLES */
-/* ---------------------------------------------------- */
-body {
     font-family: Arial, sans-serif;
     color: white;
+}
 
-    /* Smooth gradient transition from a large black area to dark purple */
+/* ----------------------------------------------------
+   PAGE BACKGROUND
+---------------------------------------------------- */
+body {
     background: linear-gradient(
-        to bottom, 
-        #000000 0,      /* Start with solid black */
-        #000000 300px,  /* Black remains solid down to 300px */
-        #1e0040 450px,  /* Smooth transition to first dark purple color */
-        #39016b 650px,  /* Transition further */
-        #53029a 100%    /* Final, deepest purple color */
+        to bottom,
+        #000000 0,
+        #000000 300px,
+        #1e0040 450px,
+        #39016b 650px,
+        #53029a 100%
     );
-    
     min-height: 200vh;
     background-attachment: fixed;
 }
 
-
-/* ---------------------------------------------------- */
-/* 2. FIXED NAVIGATION BAR */
-/* ---------------------------------------------------- */
+/* ----------------------------------------------------
+   FIXED NAVIGATION BAR
+---------------------------------------------------- */
 nav {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
-    background-color: #000000;
+    width: 100%;
+    background-color: #000;
     z-index: 1000;
-
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    padding: 15px 10px; 
-    font-size: 22px;
-    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 }
 
-nav a {
+.nav-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* LEFT NAV LINKS */
+.nav-left {
+    display: flex;
+    gap: 80px;
+}
+
+.nav-left a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
     letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-left a:hover {
+    color: #53029a;
 }
 
-/* NAVIGATION ICONS (for index.html and shop.html) */
-.nav-icons {
+/* RIGHT NAV ICONS */
+.nav-right {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-icon {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 20px; 
-    padding-right: 20px; 
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-.nav-image {
-    width: 28px; 
-    height: auto;
-    vertical-align: middle; 
-}
-.nav-icon-static {
-    display: flex; 
-    align-items: center;
-    cursor: default; 
+.nav-icon:hover {
+    color: #53029a;
 }
 
+.nav-icon i {
+    display: inline-block;
+    vertical-align: top;
+}
 
-/* ---------------------------------------------------- */
-/* 3. LOGO CONTAINER & FADE EFFECT */
-/* ---------------------------------------------------- */
-.logo-container {
-    padding-top: calc(40px + 52px);
+/* CART QUANTITY BUBBLE */
+#cart-quantity {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    line-height: 1;
+    min-width: 14px;
     text-align: center;
-    background-color: #000000; 
+    pointer-events: none;
 }
+
+/* ----------------------------------------------------
+   LOGO
+---------------------------------------------------- */
+.logo-container {
+    padding-top: 92px; /* 40 + 52 */
+    text-align: center;
+    background-color: #000;
+}
+
 .logo-container img {
-    width: 350px; 
-    height: auto;
+    width: 350px;
     display: block;
     margin: 0 auto;
 }
 
-
-/* ---------------------------------------------------- */
-/* 4. MAIN CENTER TEXT (Used for the WELCOME ANGELS section) */
-/* ---------------------------------------------------- */
+/* ----------------------------------------------------
+   CENTER TEXT
+---------------------------------------------------- */
 .center-text {
     text-align: center;
     margin-top: 120px;
@@ -104,188 +137,198 @@ nav a:hover {
 }
 
 .center-text h1 {
-    line-height: 1; 
-    margin: 0; 
+    margin: 0;
+    line-height: 1;
 }
 
 .center-text p {
-    margin-top: 5px; 
-    margin-bottom: 5px; 
+    margin: 5px 0;
 }
 
-
-/* ---------------------------------------------------- */
-/* 5. HORIZONTAL DIVIDER LINE */
-/* ---------------------------------------------------- */
+/* DIVIDER */
 .divider-line {
     height: 2px;
-    background-color: white; 
-    width: 90%; 
-    margin: 40px auto; 
+    background-color: white;
+    width: 90%;
+    margin: 40px auto;
     border-radius: 1px;
 }
 
-
-/* ---------------------------------------------------- */
-/* 6. FULL WIDTH IMAGE (for the band photo on index.html) */
-/* ---------------------------------------------------- */
+/* FULL WIDTH IMAGE */
 .centered-photo {
-    display: block; 
-    width: 900px; 
-    height: auto;
-    margin: 0 auto 0 460px; 
+    width: 900px;
+    display: block;
+    margin: 0 auto 0 460px;
 }
 
-
-/* ---------------------------------------------------- */
-/* 7. CA4 PAGE & THREE-COLUMN LAYOUT (NO PURPLE BOXES) */
-/* ---------------------------------------------------- */
-
+/* ----------------------------------------------------
+   CA4 PAGE
+---------------------------------------------------- */
 .ca4-content-wrapper {
-    padding-top: 100px; 
-    padding-bottom: 50px;
+    padding: 100px 0 50px;
     text-align: center;
-    width: 90%; 
+    width: 90%;
     margin: 0 auto;
 }
 
 .ca4-content-wrapper h1 {
-    font-size: 40px; 
+    font-size: 40px;
     margin-bottom: 30px;
 }
 
-/* THREE-COLUMN PHOTO LAYOUT (Flexbox) */
 .three-photo-row {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     align-items: stretch;
-    margin: 60px auto; 
-    max-width: 1200px; 
+    margin: 60px auto;
+    max-width: 1200px;
 }
 
-/* Style for each individual picture/text container (THE COLUMN BLOCK) */
 .photo-item {
-    width: 30%; 
-    text-align: center; 
-    
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; 
-    
-    /* No background color here */
-    background-color: transparent; 
-    padding-bottom: 20px; 
-}
-
-/* Wrapper for Name and Bio (Flex Growth Fix) */
-.text-content {
-    /* Ensures equal column height */
-    flex-grow: 1; 
-    /* No background color here for floating text */
+    width: 30%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    background: transparent;
+    padding-bottom: 20px;
 }
 
-/* Style for the images (FIXED HEIGHT TO MATCH) */
+.text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .photo-item img {
-    width: 100%; 
-    height: 450px; 
-    object-fit: cover; 
-    border-radius: 0; 
-    margin-bottom: 0; 
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
 
-/* MEMBER NAME/BIO TEXT STYLES */
 .member-name {
-    font-size: 24px; 
+    font-size: 24px;
+    margin: 15px 0 10px;
     font-weight: bold;
-    color: white; 
-    margin-top: 15px; 
-    margin-bottom: 10px; 
-    line-height: 1.2;
-    padding: 0 10px; 
 }
 
 .member-bio {
-    font-size: 14px; 
-    color: #f0f0f0; 
+    font-size: 14px;
+    color: #f0f0f0;
     line-height: 1.4;
-    margin: 0; 
-    padding: 0 10px; 
+    padding: 0 10px;
 }
 
-/* ---------------------------------------------------- */
-/* 8. IMAGE LEFT, TEXT RIGHT LAYOUT (STACKED CONTENT, NO BOX) */
-/* ---------------------------------------------------- */
-
+/* IMAGE LEFT / TEXT RIGHT */
 .info-row {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
+    justify-content: space-between;
     max-width: 1200px;
-    margin: 80px auto; 
+    margin: 80px auto;
 }
 
-/* Left Column: Image */
 .image-column {
     width: 40%;
-    /* Space between the images and the text column */
-    padding-right: 40px; 
+    padding-right: 40px;
 }
 
-/* Image stacking */
 .image-column img {
     width: 100%;
-    height: auto;
-    display: block;
+    margin-bottom: 40px;
     border-radius: 4px;
-    /* Margin to separate the two stacked images */
-    margin-bottom: 40px; 
 }
 
-/* Right Column: Text */
 .text-column {
-    width: 60%; 
-    
-    /* Flexbox for vertical stacking of text blocks */
-    display: flex; 
+    width: 60%;
+    display: flex;
     flex-direction: column;
-    
-    /* Gap between the "HOW IT BEGUN" block and "FUN FACTS" block */
-    gap: 40px; 
-}
-
-.text-block {
-    /* These blocks stack, taking up full width of the column */
-    padding-bottom: 0; 
+    gap: 40px;
 }
 
 .row-heading {
-    /* Large, bold, uppercase look */
-    font-size: 38px; 
+    font-size: 38px;
     font-weight: bold;
-    color: white;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     text-transform: uppercase;
-    line-height: 1.1;
-    
-    /* Centered the text */
-    text-align: center; 
+    text-align: center;
 }
 
 .row-paragraph {
-    /* Text size and color */
     font-size: 18px;
-    color: #cccccc;
+    color: #ccc;
     line-height: 1.6;
-    margin-bottom: 20px;
-    
-    /* Justified text alignment for straight edges */
-    text-align: justify; 
+    text-align: justify;
 }
 
-/* Ensures the last paragraph doesn't have extra bottom margin */
 .last-paragraph {
     margin-bottom: 0;
+}
+
+/* ----------------------------------------------------
+   SHOP PAGE
+---------------------------------------------------- */
+.shop-content-wrapper {
+    padding: 100px 0 80px;
+    text-align: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.shop-content-wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.product-item {
+    width: calc(33.33% - 20px);
+    text-align: center;
+    background: transparent;
+    padding: 20px;
+}
+
+.product-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    background-color: #39016b;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    transition: background-color .3s;
+}
+
+.add-to-cart-btn i {
+    margin-right: 8px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #53029a;
 }
