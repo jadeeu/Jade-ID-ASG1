@@ -72,10 +72,10 @@ nav {
 /* RIGHT NAV ICONS */
 .nav-right {
     display: flex;
-    gap: 35px;
+    /* Tighter grouping for icons */
+    gap: 20px; 
     align-items: center;
 }
-
 .nav-icon {
     position: relative;
     display: flex;
@@ -112,12 +112,13 @@ nav {
 }
 
 /* ----------------------------------------------------
-   LOGO
+   LOGO
 ---------------------------------------------------- */
 .logo-container {
-    padding-top: 92px; /* 40 + 52 */
-    text-align: center;
-    background-color: #000;
+/* UPDATED: Increased padding to clear the fixed nav bar */
+ padding-top: 120px; 
+ text-align: center;
+ background-color: #000;
 }
 
 .logo-container img {
