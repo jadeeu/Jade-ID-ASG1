@@ -347,3 +347,110 @@ nav {
 .shop-content-wrapper .add-to-cart-btn:hover {
     background-color: #53029a;
 }
+
+/* ==================================================== */
+/* 99. MOBILE RESPONSIVENESS (Max-width 768px) */
+/* ==================================================== */
+@media (max-width: 768px) {
+
+    /* --- GLOBAL ADJUSTMENTS --- */
+
+    /* Adjust padding to prevent logo from being covered by the now-taller fixed header */
+    .logo-container {
+        padding-top: 150px; /* Increased padding top */
+    }
+
+    /* Adjust main content wrappers to drop below the fixed header */
+    .ca4-content-wrapper,
+    .shop-content-wrapper {
+        padding-top: 150px;
+    }
+    
+    /* Center text size reduction */
+    .center-text h1 {
+        font-size: 38px;
+    }
+    .center-text p {
+        font-size: 20px;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    .nav-wrapper {
+        flex-direction: column; /* Stack the nav-left and nav-right */
+        padding: 0 10px;        /* Reduce side padding */
+        gap: 15px;
+    }
+
+    .nav-left {
+        gap: 20px;              /* Reduce spacing between links */
+        flex-wrap: wrap;        /* Allow links to wrap to a new line */
+        justify-content: center;
+    }
+
+    .nav-right {
+        gap: 30px;              /* Adjust spacing between icons */
+        justify-content: center;
+    }
+
+    /* --- SHOP PAGE (Switch to a single column layout) --- */
+    .shop-content-wrapper .product-grid {
+        grid-template-columns: 1fr; /* One item per row */
+        gap: 30px;
+        padding: 0 10px;
+    }
+
+    .shop-content-wrapper .product-item {
+        /* Remove fixed aspect ratio that limits height on mobile */
+        aspect-ratio: auto; 
+        padding: 20px 10px 30px; /* Adjust padding within the item */
+    }
+    
+    /* Ensure image fits width but doesn't take up too much height */
+    .shop-content-wrapper .product-item img {
+        width: 60%;
+        max-height: 250px;
+    }
+
+    /* --- CA4 PAGE (Stacking Layouts) --- */
+
+    /* 1. THREE MEMBER PROFILES */
+    .three-photo-row {
+        flex-direction: column; /* Stack member columns vertically */
+        gap: 40px;
+        margin: 40px auto;
+        max-width: 400px; /* Constrain stacked items for better presentation */
+    }
+
+    .photo-item {
+        width: 100%; /* Full width for stacked items */
+    }
+
+    .photo-item img {
+        height: auto; /* Allow image height to adjust naturally */
+    }
+
+    /* 2. INFO SECTION (Image/Text Column Stack) */
+    .info-row {
+        flex-direction: column; /* Stack image column over text column */
+        margin: 40px auto;
+        padding: 0 20px; /* Add side padding for text */
+    }
+
+    .image-column,
+    .text-column {
+        width: 100%; /* Both columns take full width */
+        padding-right: 0;
+    }
+    
+    .image-column img {
+        margin-bottom: 20px; /* Reduce spacing between stacked images */
+    }
+
+    .row-heading {
+        font-size: 28px; /* Smaller heading size */
+    }
+
+    .row-paragraph {
+        font-size: 16px; /* Smaller paragraph size */
+    }
+}
