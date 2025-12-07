@@ -2,31 +2,32 @@
 // 1. PAGE LOAD LOG
 // ----------------------------------------------------
 console.log("Chase Atlantic Fan Site: Script loaded successfully!");
-
+localStorage.removeItem('cartQuantity');
 
 // ----------------------------------------------------
 // 2. CORE CART DATA HANDLING (Persistence)
 // ----------------------------------------------------
 
 /**
- * Loads the cart quantity from the browser's localStorage.
- * Defaults to 0 if no quantity is found.
- * @returns {number} The current cart quantity.
+ * Loads the cart quantity from localStorage.
+ * Returns 0 if not set or invalid.
  */
 function loadCartQuantity() {
     const storedQuantity = localStorage.getItem('cartQuantity');
-    // Ensure the return is an integer (number), defaulting to 0
-    return parseInt(storedQuantity) || 0;
+
+    // Convert to integer and validate
+    const quantity = parseInt(storedQuantity);
+
+    return Number.isInteger(quantity) && quantity >= 0 ? quantity : 0;
 }
 
 /**
- * Updates the visual cart badge element on the navigation bar.
+ * Updates the cart number displayed in the navbar.
  */
 function updateCartDisplay() {
     const quantity = loadCartQuantity();
     const cartQuantityElement = document.getElementById('cart-quantity');
-    
-    // Check if the element exists (it exists on all pages)
+
     if (cartQuantityElement) {
         cartQuantityElement.textContent = quantity;
     }
@@ -37,19 +38,19 @@ function updateCartDisplay() {
 // 3. ADD TO CART FUNCTION (Called from shop.html)
 // ----------------------------------------------------
 function addToCart(productName, productPrice) {
-    // 1. Get the current quantity from localStorage
+    // Load previous quantity
     let currentQuantity = loadCartQuantity();
-    
-    // 2. Increment the total quantity
+
+    // Add one new item
     currentQuantity += 1;
-    
-    // 3. Save the new quantity to localStorage
+
+    // Save updated quantity
     localStorage.setItem('cartQuantity', currentQuantity);
-    
-    // 4. Update the display across the whole site
+
+    // Update navbar badge immediately
     updateCartDisplay();
 
-    // 5. Confirmation alert
+    // Feedback
     console.log(`Added: ${productName} ($${productPrice}). New total: ${currentQuantity}`);
     alert(`${productName} added to cart! Total items: ${currentQuantity}`);
 }
@@ -62,7 +63,7 @@ function showSoldOutAlert() {
     alert("All tickets sold out.");
 }
 
-// Optional: Keep the shop link log for development purposes
+// Optional logging for development
 document.addEventListener("DOMContentLoaded", () => {
     const shopLink = document.querySelector('a[href="shop.html"]');
     if (shopLink) {
@@ -74,9 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ----------------------------------------------------
-// 5. EXECUTION ON PAGE LOAD
+// 5. EXECUTION ON EVERY PAGE LOAD
 // ----------------------------------------------------
 
-// IMPORTANT: This runs the cart quantity update as soon as ANY page loads,
-// ensuring the correct count is shown immediately.
+// Ensures correct cart number shows every time you reload or visit any page
 document.addEventListener("DOMContentLoaded", updateCartDisplay);
