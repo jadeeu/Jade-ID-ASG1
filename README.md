@@ -49,8 +49,13 @@ Cart Badge Positioning Fixes
 Navigation Structure and Basic Functionality
 - "add to cart" logic 
 - Tour notification
+- navigation bar  
+https://gemini.google.com/app/48d1fb570f00d1b0 
 
 Chatgpt
 - navigation bar
+https://chatgpt.com/c/6933a37a-34a4-8321-b0db-ab2988553edc
 - organized css
 - organized js
+- organized htmls
+https://chatgpt.com/c/69352626-5f90-8324-861f-f8ecbace2370 
