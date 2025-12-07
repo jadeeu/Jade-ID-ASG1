@@ -1,8 +1,6 @@
 # Jade-ID-ASG1
 this is for assignment !
 
-
-
 1) The user audience , intent and purpose. 
 The user are for Chase Atlantic fans to recieve updates , know more about the band , buy merch and tickets to their tour. 
 
@@ -13,7 +11,7 @@ The website is primarily catering for the dedicated global fanbase of the altern
 This website is for Chase Atlantic to post updates, sell merch , sell tour tickets and allow fans to get to know more about them. 
 
 4) Attributes all external source code used.
-IMAGES
+-IMAGES-
 trio2.jpg - by 🌪️ on https://www.pinterest.com/pin/154529830959902544/
 
 trio.png - by ⊹˚˖⁺ ｇｉｎａ on https://www.pinterest.com/pin/30258628744552482/ 
@@ -44,3 +42,15 @@ paradise.png - by Juno on https://www.juno.co.uk/products/chase-atlantic-paradis
 
 CAlogo.png - by <3 on https://www.pinterest.com/pin/295900638039186985/
 
+-Tools-
+Gemini
+Cart Badge Positioning Fixes
+- my cart icon was not visable
+Navigation Structure and Basic Functionality
+- "add to cart" logic 
+- Tour notification
+
+Chatgpt
+- navigation bar
+- organized css
+- organized js

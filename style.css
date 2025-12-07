@@ -2,7 +2,7 @@
    GLOBAL RESET
 ---------------------------------------------------- */
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -200,7 +200,7 @@ nav {
 
 .photo-item img {
     width: 100%;
-    height: 350px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -283,48 +283,43 @@ nav {
     color: #ccc;
 }
 
-/* Product grid: 2 per row for shop */
 .shop-content-wrapper .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin-top: 60px;
     padding: 0 20px;
 }
 
-/* Product card: bigger square */
 .shop-content-wrapper .product-item {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
     text-align: center;
     overflow: hidden;
-    aspect-ratio: 1 / 1;   /* square cards */
+    aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
 }
 
-/* Product image inside square card */
 .shop-content-wrapper .product-item img {
-    width: 80%;           /* larger image */
+    width: 80%;
     height: auto;
-    max-height: 70%;      /* fills most of square */
-    object-fit: contain;   /* prevent clipping */
+    max-height: 70%;
+    object-fit: contain;
     display: block;
     margin: 0 auto 15px;
     border-radius: 10px;
 }
 
-/* Product title */
 .shop-content-wrapper .product-item h3 {
     font-size: 22px;
     margin: 10px 0 5px;
     color: #000;
 }
 
-/* Price */
 .shop-content-wrapper .price {
     font-size: 24px;
     font-weight: bold;
@@ -332,7 +327,6 @@ nav {
     color: #000;
 }
 
-/* Add to cart button */
 .shop-content-wrapper .add-to-cart-btn {
     background-color: #39016b;
     color: white;

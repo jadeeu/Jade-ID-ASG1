@@ -1,8 +1,12 @@
-// Placeholder JS — ready for features you want later
-
+// ----------------------------------------------------
+// 1. PAGE LOAD LOG
+// ----------------------------------------------------
 console.log("Main page loaded successfully!");
 
-// Example: popup message when clicking SHOP
+
+// ----------------------------------------------------
+// 2. SHOP LINK CLICK LOG
+// ----------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const shopLink = document.querySelector('a[href="shop.html"]');
 
@@ -13,33 +17,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// --- 4. EXECUTION ---
 
-// Ensure the cart count is loaded and displayed immediately when the page finishes loading.
-document.addEventListener('DOMContentLoaded', updateCartCount);
+// ----------------------------------------------------
+// 3. EXECUTION ON PAGE LOAD
+// ----------------------------------------------------
+document.addEventListener("DOMContentLoaded", updateCartCount);
 
+
+// ----------------------------------------------------
+// 4. ALERT FUNCTIONS
+// ----------------------------------------------------
 function showSoldOutAlert() {
-    // This command pops up a modal window with the specified text.
-    alert("All tickets sold out.");
+  alert("All tickets sold out.");
 }
 
-// --- Cart Functionality ---
+
+// ----------------------------------------------------
+// 5. CART FUNCTIONALITY
+// ----------------------------------------------------
 function addToCart() {
-    // Get the current quantity from the span
-    let cartQuantityElement = document.getElementById('cart-quantity');
-    let currentQuantity = parseInt(cartQuantityElement.textContent);
-    
-    // Increase the quantity and update the display
-    let newQuantity = currentQuantity + 1;
-    cartQuantityElement.textContent = newQuantity;
+  const cartQuantityElement = document.getElementById("cart-quantity");
+  const currentQuantity = parseInt(cartQuantityElement.textContent);
 
-    // Optional: Provide visual feedback to the user
-    alert("Item added to cart! Total items: " + newQuantity);
+  const newQuantity = currentQuantity + 1;
+  cartQuantityElement.textContent = newQuantity;
+
+  alert("Item added to cart! Total items: " + newQuantity);
 }
 
-// --- TOUR Alert Functionality ---
-function showSoldOutAlert() {
-    alert("All tickets sold out");
-}
 
-// You can add other functions here later, like initializing the cart on load.
+// ----------------------------------------------------
+// 6. Additional functions for future features
+// ----------------------------------------------------
+// (Add more functions here)
